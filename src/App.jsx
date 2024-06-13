@@ -7,11 +7,13 @@ import './index.css';
 
 const App = () => {
   const [videos, setVideos] = useState([
-    { id: 1, title: 'Título do Anime 1', image: 'URL_da_Imagem', link: 'URL_do_Vídeo', category: 'Animes' },
-    { id: 2, title: 'Título do Jogo 1', image: 'URL_da_Imagem', link: 'URL_do_Vídeo', category: 'Jogos' },
-    { id: 3, title: 'Título da Série 1', image: 'URL_da_Imagem', link: 'URL_do_Vídeo', category: 'Séries' },
+    { id: 1, title: 'Título do Anime 1', image: 'URL_da_Imagem', link: 'https://www.youtube.com/embed/dQw4w9WgXcQ', category: 'Animes' },
+    { id: 2, title: 'Título do Jogo 1', image: 'URL_da_Imagem', link: 'https://www.youtube.com/embed/dQw4w9WgXcQ', category: 'Jogos' },
+    { id: 3, title: 'Título da Série 1', image: 'URL_da_Imagem', link: 'https://www.youtube.com/embed/dQw4w9WgXcQ', category: 'Séries' },
   ]);
+
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [playerModalIsOpen, setPlayerModalIsOpen] = useState(false);
   const [currentVideo, setCurrentVideo] = useState(null);
 
   const openModal = (video) => {
@@ -19,9 +21,15 @@ const App = () => {
     setModalIsOpen(true);
   };
 
+  const openPlayerModal = (video) => {
+    setCurrentVideo(video);
+    setPlayerModalIsOpen(true);
+  };
+
   const closeModal = () => {
     setCurrentVideo(null);
     setModalIsOpen(false);
+    setPlayerModalIsOpen(false);
   };
 
   const handleDelete = (id) => {
@@ -45,19 +53,19 @@ const App = () => {
         <h2 className="category-title animes-title">Animes</h2>
         <div className="category">
           {videos.filter(video => video.category === 'Animes').map(video => (
-            <Card key={video.id} video={video} onDelete={handleDelete} onEdit={openModal} />
+            <Card key={video.id} video={video} onDelete={handleDelete} onEdit={openModal} onWatch={openPlayerModal} />
           ))}
         </div>
         <h2 className="category-title jogos-title">Jogos</h2>
         <div className="category">
           {videos.filter(video => video.category === 'Jogos').map(video => (
-            <Card key={video.id} video={video} onDelete={handleDelete} onEdit={openModal} />
+            <Card key={video.id} video={video} onDelete={handleDelete} onEdit={openModal} onWatch={openPlayerModal} />
           ))}
         </div>
         <h2 className="category-title séries-title">Séries</h2>
         <div className="category">
           {videos.filter(video => video.category === 'Séries').map(video => (
-            <Card key={video.id} video={video} onDelete={handleDelete} onEdit={openModal} />
+            <Card key={video.id} video={video} onDelete={handleDelete} onEdit={openModal} onWatch={openPlayerModal} />
           ))}
         </div>
       </main>
@@ -96,6 +104,25 @@ const App = () => {
           </select>
           <button type="submit">Adicionar</button>
         </form>
+      </Modal>
+      <Modal
+        isOpen={playerModalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Player Modal"
+        className="modal"
+        overlayClassName="modal-overlay"
+      >
+        <div className="player-container">
+          <iframe
+            width="560"
+            height="315"
+            src={currentVideo?.link}
+            title={currentVideo?.title}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
       </Modal>
     </div>
   );
