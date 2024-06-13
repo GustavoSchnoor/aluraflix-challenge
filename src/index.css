@@ -1,13 +1,237 @@
+/* Geral */
 body {
+  font-family: 'Arial', sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #000;
+  color: #fff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Header e Footer */
+.header, .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  background-color: #111;
+}
+
+.header h1, .footer h1 {
+  color: #00aaff;
+}
+
+.header h1 {
+  font-size: 1.6em;
+}
+
+.header button {
+  background-color: #000;
+  border: none;
+  padding: 0.5em 1em;
+  color: #00aaff;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 0 10px #00aaff;
+}
+
+.header button:hover {
+  background-color: #001f3f;
+  color: #00aaff;
+  box-shadow: 0 0 20px #00aaff;
+}
+
+.footer-center {
+  justify-content: center;
+}
+
+/* Títulos das Categorias */
+.category-title {
+  text-align: center;
+  font-size: 1.6em;
+  margin: 1em 0;
+}
+
+.animes-title {
+  color: #00aaff;
+}
+
+.jogos-title {
+  color: #32CD32;
+}
+
+.séries-title {
+  color: #e50914;
+}
+
+/* Cards */
+.card {
+  background-color: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px;
+  margin: 1em;
+  text-align: center;
+  padding: 1em;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card h3 {
+  font-size: 1.2em;
+  margin: 0.5em 0;
+}
+
+/* Botões de ações dos cards */
+.actions {
+  margin-top: 0.5em;
+}
+
+.actions button {
+  background-color: transparent;
+  border: 2px solid;
+  padding: 0.3em 0.6em;
+  color: inherit;
+  cursor: pointer;
+  font-size: 0.9em;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 0 5px;
+  margin-right: 0.5em;
+}
+
+.actions button:last-child {
+  margin-right: 0;
+}
+
+.actions button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.assistir {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #000;
+  border: 2px solid;
+  padding: 0.5em 1em;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 0 10px;
+  margin-top: 0.5em;
+}
+
+.assistir:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Especificidade de cor para cada categoria */
+button.animes,
+a.assistir.animes {
+  color: #00aaff;
+  border-color: #00aaff;
+  box-shadow: 0 0 5px #00aaff;
+}
+
+button.animes:hover,
+a.assistir.animes:hover {
+  background-color: #00aaff;
+  color: #000;
+  box-shadow: 0 0 20px #00aaff;
+}
+
+button.jogos,
+a.assistir.jogos {
+  color: #32CD32;
+  border-color: #32CD32;
+  box-shadow: 0 0 5px #32CD32;
+}
+
+button.jogos:hover,
+a.assistir.jogos:hover {
+  background-color: #32CD32;
+  color: #000;
+  box-shadow: 0 0 20px #32CD32;
+}
+
+button.séries,
+a.assistir.séries {
+  color: #e50914;
+  border-color: #e50914;
+  box-shadow: 0 0 5px #e50914;
+}
+
+button.séries:hover,
+a.assistir.séries:hover {
+  background-color: #e50914;
+  color: #000;
+  box-shadow: 0 0 20px #e50914;
+}
+
+/* Modal */
+.ReactModal__Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.ReactModal__Content {
+  position: relative;
+  background-color: #111;
+  border-radius: 12px;
+  padding: 2em;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin: 1em 0 0.5em;
+}
+
+form input,
+form select {
+  padding: 0.5em;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 1em;
+}
+
+form button {
+  background-color: #000;
+  border: none;
+  padding: 0.5em 1em;
+  color: #00aaff;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 0 10px #00aaff;
+}
+
+form button:hover {
+  background-color: #001f3f;
+  color: #00aaff;
+  box-shadow: 0 0 20px #00aaff;
 }
