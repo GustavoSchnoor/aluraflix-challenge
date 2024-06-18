@@ -123,7 +123,7 @@ const App = () => {
           <button type="submit">Adicionar</button>
         </form>
       </Modal>
-      
+
       <Modal
         isOpen={playerModalIsOpen}
         onRequestClose={closeModal}
