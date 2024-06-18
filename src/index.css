@@ -196,7 +196,7 @@ a.assistir.séries:hover {
   border-radius: 12px;
   padding: 2em;
   width: 90%;
-  max-width: 500px;
+  height: 80%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -204,6 +204,7 @@ a.assistir.séries:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 form {
