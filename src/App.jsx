@@ -7,9 +7,27 @@ import './index.css';
 
 const App = () => {
   const [videos, setVideos] = useState([
-    { id: 1, title: 'One Piece', image: 'https://i.pinimg.com/736x/fb/0f/99/fb0f996251e2a15f52403df655c0f813.jpg', link: 'https://www.youtube.com/embed/qkj2VeDw5cY?si=thMFeItAm7EktbSk', category: 'Animes' },
-    { id: 2, title: 'Elden Ring', image: 'https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/aGhopp3MHppi7kooGE2Dtt8C.png', link: 'https://www.youtube.com/embed/gUPUI4NqQHc?si=zXEG71XusdkA1fy5', category: 'Jogos' },
-    { id: 3, title: 'Eu, a patroa e as crianças', image: 'https://images.justwatch.com/poster/244597295/s332/temporada-2', link: 'https://www.youtube.com/embed/3B_qXITddHU?si=f0CT4cKjaplX75fA', category: 'Séries' },
+    {
+      id: 1,
+      title: 'One Piece',
+      image: 'https://i.pinimg.com/736x/fb/0f/99/fb0f996251e2a15f52403df655c0f813.jpg',
+      link: 'https://www.youtube.com/embed/qkj2VeDw5cY?si=thMFeItAm7EktbSk',
+      category: 'Animes'
+    },
+    { 
+      id: 2, 
+      title: 'Elden Ring',
+      image: 'https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/aGhopp3MHppi7kooGE2Dtt8C.png', 
+      link: 'https://www.youtube.com/embed/gUPUI4NqQHc?si=zXEG71XusdkA1fy5', 
+      category: 'Jogos' 
+    },
+    { 
+      id: 3, 
+      title: 'Eu, a patroa e as crianças', 
+      image: 'https://images.justwatch.com/poster/244597295/s332/temporada-2', 
+      link: 'https://www.youtube.com/embed/3B_qXITddHU?si=f0CT4cKjaplX75fA', 
+      category: 'Séries' 
+    },
   ]);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -105,6 +123,7 @@ const App = () => {
           <button type="submit">Adicionar</button>
         </form>
       </Modal>
+      
       <Modal
         isOpen={playerModalIsOpen}
         onRequestClose={closeModal}
