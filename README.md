@@ -1,3 +1,21 @@
+# Challenge ALURAFLIX com REACT do projeto ONE+Alura
+
+Olá, bem-vindo ao meu Challenge da Oracle e Alura, onde precisei fazer um site no qual é exibido 3 categorias de Animes, jogos e Series. 
+
+## Ferramentas Utilizadas
+
+- HTML
+- CSS
+- JavaScript
+- React
+
+## Partes Principais do projeto
+
+- Possui de forma padrão 1 card em cada categoria, podendo ser adicionado um novo card em uma nova categoria, clicando no botão " Novo Vídeo ".
+- Ao clicar em Novo Vídeo aparecerá um modal com as informações para serem preenchidas ou atualizadas.
+- Ao clicar em " Editar " em qualquer card, abrirá um modal com as informações do card atual, podendo ser atualizadas no site.
+- Ao clicar em " Assistir " irá abrir um modal com o player para assistir ao vídeo.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

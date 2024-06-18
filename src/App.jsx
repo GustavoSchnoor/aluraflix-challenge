@@ -7,9 +7,9 @@ import './index.css';
 
 const App = () => {
   const [videos, setVideos] = useState([
-    { id: 1, title: 'Título do Anime 1', image: 'URL_da_Imagem', link: 'https://www.youtube.com/embed/dQw4w9WgXcQ', category: 'Animes' },
-    { id: 2, title: 'Título do Jogo 1', image: 'URL_da_Imagem', link: 'https://www.youtube.com/embed/dQw4w9WgXcQ', category: 'Jogos' },
-    { id: 3, title: 'Título da Série 1', image: 'URL_da_Imagem', link: 'https://www.youtube.com/embed/dQw4w9WgXcQ', category: 'Séries' },
+    { id: 1, title: 'One Piece', image: 'https://i.pinimg.com/736x/fb/0f/99/fb0f996251e2a15f52403df655c0f813.jpg', link: 'https://www.youtube.com/embed/qkj2VeDw5cY?si=thMFeItAm7EktbSk', category: 'Animes' },
+    { id: 2, title: 'Elden Ring', image: 'https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/aGhopp3MHppi7kooGE2Dtt8C.png', link: 'https://www.youtube.com/embed/gUPUI4NqQHc?si=zXEG71XusdkA1fy5', category: 'Jogos' },
+    { id: 3, title: 'Eu, a patroa e as crianças', image: 'https://images.justwatch.com/poster/244597295/s332/temporada-2', link: 'https://www.youtube.com/embed/3B_qXITddHU?si=f0CT4cKjaplX75fA', category: 'Séries' },
   ]);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -114,8 +114,8 @@ const App = () => {
       >
         <div className="player-container">
           <iframe
-            width="560"
-            height="315"
+            width="100%"
+            height="100%"
             src={currentVideo?.link}
             title={currentVideo?.title}
             frameBorder="0"
