@@ -95,6 +95,7 @@ const App = () => {
         className="modal"
         overlayClassName="modal-overlay"
       >
+        <button className='close-button' onClick={closeModal} >X</button>
         <h2>{currentVideo ? 'Editar Vídeo' : 'Novo Vídeo'}</h2>
         <form onSubmit={(e) => {
           e.preventDefault();
@@ -131,6 +132,7 @@ const App = () => {
         className="modal"
         overlayClassName="modal-overlay"
       >
+        <button className='close-button' onClick={closeModal} >X</button>
         <div className="player-container">
           <iframe
             width="100%"
