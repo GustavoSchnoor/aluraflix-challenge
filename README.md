@@ -15,6 +15,7 @@ Olá, bem-vindo ao meu Challenge da Oracle e Alura, onde precisei fazer um site 
 - Ao clicar em Novo Vídeo aparecerá um modal com as informações para serem preenchidas ou atualizadas.
 - Ao clicar em " Editar " em qualquer card, abrirá um modal com as informações do card atual, podendo ser atualizadas no site.
 - Ao clicar em " Assistir " irá abrir um modal com o player para assistir ao vídeo.
+- Você pode sair do player ou modal de cadastro de vídeo, clicando no "X" vermelho, clicando fora ou apertando ESC.
 
 # Getting Started with Create React App
 
